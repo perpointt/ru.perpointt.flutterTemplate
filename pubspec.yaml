@@ -28,4 +28,4 @@ flutter:
 
   assets:
     - assets/
-    - .env
+    - config/
