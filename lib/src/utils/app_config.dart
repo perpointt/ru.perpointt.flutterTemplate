@@ -9,7 +9,7 @@ abstract class AppConfig {
     _config = json.decode(configString) as Map<String, dynamic>;
   }
 
-  static String get environment => _config['environment'];
+  static String get environment => _config['environment'] ?? 'dev';
 
-  static bool get isProduction => _config['environment'] == "prod";
+  static bool get isProduction => environment == "prod";
 }
