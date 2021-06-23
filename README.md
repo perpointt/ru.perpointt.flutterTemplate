@@ -1,9 +1,9 @@
-# Flutter template inspired by [this boy](https://github.com/AndrewPiterov/flutter_starter_app)
+# Flutter template inspired by [this repo](https://github.com/AndrewPiterov/flutter_starter_app)
 
 
 ## Instruction
 1) Create file config/app-config.json
-2) Add variables in this file for exmp: 
+2) Add variables in this file for exmpample: 
 ```json
 {
     "environment": "dev"
@@ -34,18 +34,29 @@ Than go to *android/app/build.gradle*. Uncomment this line:
 ##### For multiple android Firebase projects
 Than go to *android/app/build.gradle*. Find *productFlavors* section and uncomment this line:
 ```gradle
-    dev {
-            dimension "release-type"
+...
+dev {
+        dimension "release-type"
           
-            // applicationIdSuffix ".dev"  // Uncomment this line if you need different suffixes
-            resValue "string", "app_name", "Template(Dev)"
-            versionNameSuffix ".dev"
-        }
+        // applicationIdSuffix ".dev"  // Uncomment this line if you need different suffixes
+        resValue "string", "app_name", "Template(Dev)"
+        versionNameSuffix ".dev"
+    }
+...
 ```
 You can set this property for all your flavors.
 
 #### Note!
-**Firebase *package_name* must be the same with your app name. If you set for your dev flavor suffix *.dev* your *package_name* in Firebase should looks like this: *ru.example.app.dev*.**
+**Firebase *package_name* must be the same with your app name. If you set for your dev flavor suffix *.dev* your *package_name* in Firebase should looks like this: *ru.perpointt.flutterTemplate.dev*.**
+
+### Android sign-in release config
+Go to *android/app* and create file *key.properties*. Than you should genetrate jks key by this command *keytool -genkey -v -keystore ~/key.jks -keyalg RSA -keysize 2048 -validity 10000 -alias key*. Than paste this lines in *key.properties*:
+```properties
+storePassword=store_password_that_you_created
+keyPassword=key_password_that_you_created
+keyAlias=key
+storeFile=file_where_key_stored
+```
 
 ## IOS
 ##### For multiple android Firebase projects

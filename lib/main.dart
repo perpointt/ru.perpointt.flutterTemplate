@@ -9,8 +9,7 @@ Future<void> main() async {
   try {
     WidgetsFlutterBinding.ensureInitialized();
 
-       await AppConfig.initialize();
-
+    await AppConfig.initialize();
 
     runApp(App());
   } catch (e) {
