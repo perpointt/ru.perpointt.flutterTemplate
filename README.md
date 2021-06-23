@@ -63,13 +63,13 @@ In ios Firebase init already for two projects(Dev and Prod). You just need to pl
 Go to *ios/config*. Place your Dev config for Firebase in folder *dev*. And place Prod config in folder *prod*.
 
 > If you need only one Firebase project. You should do next steps:
-1) Open project in XCode go to Runner, choose target Runner and go to Build Phases.
+1) Open project in XCode go to *Runner*, choose target Runner and go to *Build Phases*.
 2) Find phase called "Copy GoogleServices-Info.plist to correct location for schema". Comment all script in this phase.
 3) Paste your  *GoogleService-Info.plist* file whia XCode.
 4) Enjoy!
 
 > If you don't need suffix identifier for your product bundle name
-1) Go to Runner, choose target Runner and go to Build Phases.
+1) Go to *Runner*, choose target Runner and go to *Build Settings*.
 2) Find section Product Bundle Identifier
 3) Write your own name for all schemes
 4) Enjoy!
