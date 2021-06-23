@@ -10,9 +10,9 @@
 }
 ```
 
-## Firebase configuration
+# Firebase configuration
  If you need init Firebase in your project you need to do this instructions for two platforms:
-### Android
+## Android
 Go to *android/build.gradle*. In *buildscript* section uncomment this line:
 ```gradle
 ...
@@ -31,7 +31,7 @@ Than go to *android/app/build.gradle*. Uncomment this line:
 ...
 ```
 
-##### For multiple android Firebase projects
+### For multiple android Firebase projects
 Than go to *android/app/build.gradle*. Find *productFlavors* section and uncomment this line:
 ```gradle
 ...
@@ -48,18 +48,8 @@ You can set this property for all your flavors.
 
 #### Note!
 **Firebase *package_name* must be the same with your app name. If you set for your dev flavor suffix *.dev* your *package_name* in Firebase should looks like this: *ru.perpointt.flutterTemplate.dev*.**
-
-### Android sign-in release config
-Go to *android/app* and create file *key.properties*. Than you should genetrate jks key by this command *keytool -genkey -v -keystore ~/key.jks -keyalg RSA -keysize 2048 -validity 10000 -alias key*. Than paste this lines in *key.properties*:
-```properties
-storePassword=store_password_that_you_created
-keyPassword=key_password_that_you_created
-keyAlias=key
-storeFile=file_where_key_stored
-```
-
 ## IOS
-##### For multiple android Firebase projects
+### For multiple android Firebase projects
 In ios Firebase init already for two projects(Dev and Prod). You just need to place *GoogleService-Info.plist* in two folders. 
 Go to *ios/config*. Place your Dev config for Firebase in folder *dev*. And place Prod config in folder *prod*.
 
@@ -74,6 +64,15 @@ Go to *ios/config*. Place your Dev config for Firebase in folder *dev*. And plac
 2) Find section Product Bundle Identifier
 3) Write your own name for all schemes
 4) Enjoy!
+
+# Android sign-in release config
+Go to *android/app* and create file *key.properties*. Than you should genetrate jks key by this command *keytool -genkey -v -keystore ~/key.jks -keyalg RSA -keysize 2048 -validity 10000 -alias key*. Than paste this lines in *key.properties*:
+```properties
+storePassword=store_password_that_you_created
+keyPassword=key_password_that_you_created
+keyAlias=key
+storeFile=file_where_key_stored
+```
 
 # App Icons
 You can set different icons for your flavors
