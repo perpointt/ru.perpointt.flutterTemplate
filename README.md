@@ -1,7 +1,7 @@
 # Flutter template inspired by [this repo](https://github.com/AndrewPiterov/flutter_starter_app)
 
 
-## Instruction
+# Environments
 1) Create file config/app-config.json
 2) Add variables in this file for exmpample: 
 ```json
@@ -9,9 +9,17 @@
     "environment": "dev"
 }
 ```
+# Android sign-in release config
+Go to *android/app* and create file *key.properties*. Than you should genetrate jks key by this command *keytool -genkey -v -keystore ~/key.jks -keyalg RSA -keysize 2048 -validity 10000 -alias key*. Than paste this lines in *key.properties*:
+```properties
+storePassword=store_password_that_you_created
+keyPassword=key_password_that_you_created
+keyAlias=key
+storeFile=file_where_key_stored
+```
 
 # Firebase configuration
- If you need init Firebase in your project you need to do this instructions for two platforms:
+If you need init Firebase in your project you need to do this instructions for two platforms:
 ## Android
 Go to *android/build.gradle*. In *buildscript* section uncomment this line:
 ```gradle
@@ -48,6 +56,7 @@ You can set this property for all your flavors.
 
 #### Note!
 **Firebase *package_name* must be the same with your app name. If you set for your dev flavor suffix *.dev* your *package_name* in Firebase should looks like this: *ru.perpointt.flutterTemplate.dev*.**
+
 ## IOS
 ### For multiple android Firebase projects
 In ios Firebase init already for two projects(Dev and Prod). You just need to place *GoogleService-Info.plist* in two folders. 
@@ -59,20 +68,11 @@ Go to *ios/config*. Place your Dev config for Firebase in folder *dev*. And plac
 3) Paste your  *GoogleService-Info.plist* file whia XCode.
 4) Enjoy!
 
-##### If you don't need suffix identifier for your product bundle name
+> If you don't need suffix identifier for your product bundle name
 1) Go to Runner, choose target Runner and go to Build Phases.
 2) Find section Product Bundle Identifier
 3) Write your own name for all schemes
 4) Enjoy!
-
-# Android sign-in release config
-Go to *android/app* and create file *key.properties*. Than you should genetrate jks key by this command *keytool -genkey -v -keystore ~/key.jks -keyalg RSA -keysize 2048 -validity 10000 -alias key*. Than paste this lines in *key.properties*:
-```properties
-storePassword=store_password_that_you_created
-keyPassword=key_password_that_you_created
-keyAlias=key
-storeFile=file_where_key_stored
-```
 
 # App Icons
 You can set different icons for your flavors
