@@ -1,4 +1,4 @@
-# Flutter template inspired by [this repo](https://github.com/AndrewPiterov/flutter_starter_app)
+# Flutter template
 
 
 # Environments
